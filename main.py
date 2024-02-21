@@ -123,11 +123,10 @@ async def id_from_message(message: types.message_id):
 @dp.message_handler(content_types=ContentTypes.SUCCESSFUL_PAYMENT)
 async def got_payment(message: types.Message):
     match message.successful_payment.invoice_payload:
-        case 'sub':
-            await bot.send_message(message.chat.id,
-                                   'Поздравляяем с покупкой.Короче раскад такой.Каждый день в 15.00 тебе будет приходить тест вместе с раздаточным матерьялом.Проходя тест ты продвигаешся дальше')
-        case 'resub':
-            await bot.send_message(message.chat.id, 'поздравляяем с покупкой')
+            case 'sub':
+                await bot.send_message(message.chat.id,'Поздравляяем с покупкой.Короче раскад такой.Каждый день в 15.00 тебе будет приходить тест вместе с раздаточным матерьялом.Проходя тест ты продвигаешся дальше')
+            case 'resub':
+                await bot.send_message(message.chat.id, 'поздравляяем с покупкой')
     name = db.get_fio(message.chat.id)[0]
     db.insert_payments([message.chat.id, name])
     db.give_subscription(message.chat.id, 1)
