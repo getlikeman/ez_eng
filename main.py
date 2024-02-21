@@ -142,9 +142,6 @@ def server():
     return app
 
 
-async def run_hook():
-    await bot.set_webhook(f'{webhook_host}api')
-
 
 if __name__ == '__main__':
     # Process(target=server).start()
