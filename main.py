@@ -148,10 +148,4 @@ async def run_hook():
 
 if __name__ == '__main__':
     # Process(target=server).start()
-    if webhook:
-
-        executor.start_webhook(dispatcher=dp, webhook_path='/api', on_startup=sc.on_startup, skip_updates=True,
-                               host='0.0.0.0',
-                               port=webhook_port)
-    else:
-        executor.start_polling(dp, skip_updates=True, on_startup=sc.on_startup)
+    executor.start_polling(dp, skip_updates=True, on_startup=sc.on_startup)
