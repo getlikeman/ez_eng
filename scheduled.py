@@ -51,6 +51,7 @@ async def scheduler():
         # if now.hour == 16 and now.minute == 0:
         #     await subscription_scheduler()
         # await asyncio.sleep(60)
+        print('test')
         await daily()
         await subscription_scheduler()
         await asyncio.sleep(240)
