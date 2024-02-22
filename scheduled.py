@@ -54,7 +54,7 @@ async def scheduler():
         print('test')
         await daily()
         await subscription_scheduler()
-        await asyncio.sleep(240)
+        await asyncio.sleep(60)
 
 
 async def on_startup(_):
