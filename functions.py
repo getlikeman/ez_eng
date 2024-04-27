@@ -47,7 +47,7 @@ async def end_mess(user_id):
     keyboard = types.InlineKeyboardMarkup(row_width=2, inline_keyboard=kb)
     coin = db.get_coin(user_id)[0]
     await bot.send_message(user_id, f'Поздравляю это конец, ты набрал вот столько коинов: {coin}\n'
-                                    f'Вот такие то у тебя скидки короче похуй')
+                                    f'Процент скидки вы сможете узнать после звонка ')
     await bot.send_message(user_id, promote_text, reply_markup=keyboard)
 
 
