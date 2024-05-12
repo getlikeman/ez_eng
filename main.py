@@ -115,7 +115,7 @@ async def id_from_message(message: types.message_id):
                                    f'У вас уже есть подписка. Мы уведомим вас о надобности покупки подписки. ')
         else:
             payload = 'sub' if db.get_coin(message.from_user.id)[0] == 0 else 'resub'
-            await f.invoice(message.from_user.id, 'подписка', 'описание', payload)
+            await f.invoice(message.from_user.id, 'Подписка', 'Чтобы продлить подписку оплатите данный счет ', payload)
     else:
         await bot.send_message(message.from_user.id, "Подписка доступена только регистрации.")
 
